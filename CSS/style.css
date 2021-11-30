@@ -134,6 +134,10 @@ input:focus{
     display: flex;
 }
 
+.active{
+    background-color: lightgray;
+}
+
 .contact:not(:last-child){
     border-bottom: 1px solid lightgray;
 }
@@ -147,11 +151,93 @@ input:focus{
     width: 67%;
 }
 
-.chat-container{
-    height: 80%;
+.contact-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: rgb(234, 234, 234);
+    border-left: 1px solid lightgray;
+    color: rgb(177, 177, 177);
 }
 
+.left-contact-cont{
+    display: flex;
+    align-items: center;
+}
 
+.text-contact{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.text-contact span{
+    font-size: 12px;
+}
+
+.text-contact h6{
+    color: black;
+}
+
+.right-contact-cont{
+    display: flex;
+    align-items: center;
+}
+
+.right-contact-cont i{
+    margin: 0 10px;
+}
+
+.chat-container{
+    height: 80%;
+    background-image: url(../img/mine.jpg);
+    padding: 25px 50px;
+    overflow-y: scroll;
+}
+
+.chat{
+    width: 45%;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.friend{
+    background-color: rgb(213, 249, 186);
+    float: right;
+}
+
+.user{
+    background-color: white;
+    float: left;
+}
+
+.date-text{
+    text-align: right;
+    color: gray;
+    font-size: 8px;
+}
+
+.row::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.write-container{
+    background-color: rgb(243, 238, 234);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: grey;
+}
+
+.write-container input{
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
 
 /* debug */
 
@@ -163,9 +249,9 @@ input:focus{
     background-color: lightsalmon;
 } */
 
-.debug .right-container{
+/* .debug .right-container{
     background-color: lightpink;
-}
+} */
 /* .debug .user-container{
     background-color: lightcoral;
 } */
@@ -182,14 +268,14 @@ input:focus{
     background-color: tomato;
 } */
 
-.debug .contact-container{
+/* .debug .contact-container{
     background-color: lightskyblue;
-}
+} */
 
-.debug .chat-container{
+/* .debug .chat-container{
     background-color: lightsteelblue;
-}
+} */
 
-.debug .write-container{
+/* .debug .write-container{
     background-color: lightgreen;
-}
+} */
