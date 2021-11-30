@@ -5,3 +5,90 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+main{
+    background: linear-gradient(to bottom, rgb(0, 150, 136), rgb(0, 150, 136) 25%, rgb(220, 219, 209) 25%, rgb(210, 219, 219) 100%);
+    height: 100vh;
+}
+
+.container{
+    height: 90vh;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+}
+
+.left-container{
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-container,
+.notice-container,
+.contact-container,
+.write-container{
+    height: 10%;
+}
+
+.search-container{
+    height: 5%;
+}
+
+.list-container{
+    height: 75%;
+}
+
+.right-container{
+    height: 100%;
+    width: 67%;
+}
+
+.chat-container{
+    height: 80%;
+}
+
+/* debug */
+
+.debug .container{
+    background-color: lightgray;
+}
+
+.debug .left-container{
+    background-color: lightsalmon;
+}
+
+.debug .right-container{
+    background-color: lightpink;
+}
+.debug .user-container{
+    background-color: lightcoral;
+}
+
+.debug .notice-container{
+    background-color: lightgoldenrodyellow;
+}
+
+.debug .search-container{
+    background-color: lightcyan;
+}
+
+.debug .list-container{
+    background-color: tomato;
+}
+
+.debug .contact-container{
+    background-color: lightskyblue;
+}
+
+.debug .chat-container{
+    background-color: lightsteelblue;
+}
+
+.debug .write-container{
+    background-color: lightgreen;
+}
