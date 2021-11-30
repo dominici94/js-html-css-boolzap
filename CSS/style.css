@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/* main */
 main{
     background: linear-gradient(to bottom, rgb(0, 150, 136), rgb(0, 150, 136) 25%, rgb(220, 219, 209) 25%, rgb(210, 219, 219) 100%);
     height: 100vh;
@@ -35,12 +41,105 @@ main{
     height: 10%;
 }
 
+.user-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: rgb(234, 234, 234);
+}
+
+.left-user-cont,
+.right-user-cont{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.right-user-cont{
+    justify-content: flex-end;
+}
+
+.right-user-cont i{
+    margin: 0 5px;
+    color: rgb(177, 177, 177);
+}
+
+img{
+    height: 100%;
+    border-radius: 50%;
+}
+
+.notice-container{
+    padding: 5px;
+    background-color: rgb(142, 218, 252);
+    display: flex;
+    align-items: center;
+}
+
+.notice-container i{
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    color: rgb(142, 218, 252);
+}
+
+.notice-text{
+    margin-left: 5px;
+}
+
+.notice-text h4{
+    font-size: 13px;
+}
+
+.notice-text h6{
+    font-size: 10px;
+    color: grey;
+    text-decoration: underline;
+}
+
 .search-container{
     height: 5%;
+    padding: 2px 10px;
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    /* align-items: center; */
+}
+
+.search-container i{
+    color: lightgrey;
+    padding: 1px 20px;
+    border: 1px solid lightgray;
+    border-right: none;
+}
+
+.search-container input{
+    border: 1px solid lightgray;
+    width: 85%;
+    padding: 0 20px;
+}
+
+input:focus{
+    outline: none;
 }
 
 .list-container{
     height: 75%;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.contact{
+    height: 50px;
+    padding: 5px;
+    display: flex;
+}
+
+.contact:not(:last-child){
+    border-bottom: 1px solid lightgray;
+}
+
+.contact span{
+    margin-left: 15px;
 }
 
 .right-container{
@@ -52,34 +151,36 @@ main{
     height: 80%;
 }
 
+
+
 /* debug */
 
-.debug .container{
+/* .debug .container{
     background-color: lightgray;
-}
+} */
 
-.debug .left-container{
+/* .debug .left-container{
     background-color: lightsalmon;
-}
+} */
 
 .debug .right-container{
     background-color: lightpink;
 }
-.debug .user-container{
+/* .debug .user-container{
     background-color: lightcoral;
-}
+} */
 
-.debug .notice-container{
+/* .debug .notice-container{
     background-color: lightgoldenrodyellow;
-}
+} */
 
-.debug .search-container{
+/* .debug .search-container{
     background-color: lightcyan;
-}
+} */
 
-.debug .list-container{
+/* .debug .list-container{
     background-color: tomato;
-}
+} */
 
 .debug .contact-container{
     background-color: lightskyblue;
