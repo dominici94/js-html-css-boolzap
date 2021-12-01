@@ -104,7 +104,7 @@
 
                 <div class="chat-container">
                     <div class="row" v-for="message in contacts[activeItem].messages">
-                        <div class="chat friend">
+                        <div class="chat" :class="message.status == 'received' ? 'user' : 'friend'">
                             <div class="text">
                                 <!-- Hai portato a spasso il cane? -->
                                 {{message.message}}
@@ -136,7 +136,7 @@
 
                 <div class="write-container">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="scrivi un messaggio">
+                    <input type="text" placeholder="scrivi un messaggio" v-model="inputUser" @keyup.enter="sendMessage">
                     <i class="fas fa-microphone"></i>
                 </div>
 
