@@ -53,7 +53,7 @@
                 <!-- lista dei contatti -->
                 <!-- da rendere poi dinamica -->
                 <div class="list-container">
-                    <div class="contact" v-for="contact in contacts">
+                    <div class="contact"  v-for="(contact, index) in contacts" :class="activeItem == index? 'active' : ''" @click="showContact(index)">
                         <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                         <span>{{contact.name}}</span>
                     </div>
@@ -86,10 +86,11 @@
                 <div class="contact-container">
 
                     <div class="left-contact-cont">
-                        <img src="img/avatar_1.jpg" alt="Michele">
+                        <img :src="`img/avatar${contacts[activeItem].avatar}.jpg`" :alt="contacts[activeItem].name">
                         <div class="text-contact">
-                            <h6>Michele</h6>
-                            <span>Ultimo accesso oggi alle</span>
+                            <h6>{{contacts[activeItem].name}}</h6>
+                            <!-- //come si accede all'ultimo oggetto dell'array dentro un oggetto??? -->
+                            <span>Ultimo accesso oggi alle {{contacts[activeItem].messages[1].date}}</span>
                         </div>
                     </div>
 
@@ -102,17 +103,19 @@
                 </div>
 
                 <div class="chat-container">
-                    <div class="row">
+                    <div class="row" v-for="message in contacts[activeItem].messages">
                         <div class="chat friend">
                             <div class="text">
-                                Hai portato a spasso il cane?
+                                <!-- Hai portato a spasso il cane? -->
+                                {{message.message}}
                             </div>
                             <div class="date-text">
-                                10/01/2020 15:30:55
+                                <!-- 10/01/2020 15:30:55 -->
+                                {{message.date}}
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="chat friend">
                             <div class="text">
                                 Ricordati di dargli da mangiare
@@ -127,7 +130,7 @@
                             <div class="text">Tutto fatto!</div>
                             <div class="date-text">10/01/2020 16:15:22</div>
                         </div>
-                    </div>
+                    </div> -->
                     
                 </div>
 
