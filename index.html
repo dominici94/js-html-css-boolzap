@@ -8,6 +8,11 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- /fontawesome -->
+    <!-- googlefont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;900&display=swap" rel="stylesheet">
+    <!-- /googlefont -->
     <title>Boolzapp</title>
 </head>
 <body class="debug">
@@ -15,7 +20,7 @@
     <main>
 
         <!-- contenitore generale -->
-        <div class="container">
+        <div id="root" class="container">
 
             <!-- parte sinistra del contenitore -->
             <div class="left-container">
@@ -48,12 +53,12 @@
                 <!-- lista dei contatti -->
                 <!-- da rendere poi dinamica -->
                 <div class="list-container">
-                    <div class="contact">
-                        <img src="img/avatar_1.jpg" alt="Michele">
-                        <span>Michele</span>
+                    <div class="contact" v-for="contact in contacts">
+                        <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                        <span>{{contact.name}}</span>
                     </div>
 
-                    <div class="contact">
+                    <!-- <div class="contact">
                         <img src="img/avatar_2.jpg" alt="Fabio">
                         <span>Fabio</span>
                     </div>
@@ -66,7 +71,7 @@
                     <div class="contact">
                         <img src="img/avatar_4.jpg" alt="Luisa">
                         <span>Luisa</span>
-                    </div>
+                    </div> -->
 
                 </div>
                 <!-- /lista contatti -->
