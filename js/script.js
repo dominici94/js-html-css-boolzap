@@ -7,20 +7,16 @@
 // nome e immagine di ogni contatto 
  
 
-// ●   Risposta dall’interlocutore:  ad ogni inserimento di  un messaggio, l’utente riceverà 
-// un “ok” come risposta, che apparirà dopo 1 secondo. 
+ 
 // Milestone 4 
 // ●   Ricerca utenti:  scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i 
 // contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo 
 // “mar” rimangono solo Marco e Martina) 
-// Consigli utili: 
-// ●   Si possono trascurare le scrollbar verticali, sia nel pannello dei messaggi, che nella 
-// lista dei contatti 
-// ●   I pulsanti e le icone possono non funzionare (a parte l’invio del messaggio) 
-// ●   Per gestire le date, può essere utile la libreria  day.js 
-// ●   La struttura dell’array dei contatti potrebbe avere questa forma:
 
-// array di oggetti
+// Consigli utili: 
+ 
+// ●   Per gestire le date, può essere utile la libreria  day.js 
+
 
 
 
@@ -110,22 +106,45 @@ const app = new Vue({
         ],
         activeItem : 0,
         inputUser : '',
+        currentDate: dayjs().format('DD/MM/YYYY hh:mm:ss'),
     },
     methods: {
         showContact: function(index){
             this.activeItem = index;  
         },
+        answer: function(){
+            this.contacts[this.activeItem].messages.push({
+                date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
+                message: 'ok',
+                status: 'received'
+            });
+        }, 
         sendMessage: function(){
             if(this.inputUser != ''){
                 this.contacts[this.activeItem].messages.push({
-                    date: '',
+                    date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
                     message: this.inputUser,
                     status: 'sent',
                 });
                 this.inputUser = '';
+                // setTimeout( function(){
+                //     this.contacts[this.activeItem].messages.push({
+                //         date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
+                //         message: 'ok',
+                //         status: 'received',
+                //     });
+                // } , 1000);
+                this.contacts[this.activeItem].messages.push({
+                    date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
+                    message: 'ok',
+                    status: 'received',
+                });
+                
+                
             }
-            
-        },
+        }, 
+              
+
     }
 }); 
 
@@ -137,3 +156,12 @@ const app = new Vue({
 // Milestone 3 
 // ●   Aggiunta di un messaggio  : l’utente scrive un testo  nella parte bassa e digitando 
 // “enter” il testo viene aggiunto al thread sopra, come messaggio verde 
+// ●   Risposta dall’interlocutore:  ad ogni inserimento di  un messaggio, l’utente riceverà 
+// un “ok” come risposta, che apparirà dopo 1 secondo.
+
+
+// stackoverflow per date
+// console.log(dayjs().format('DD/MM/YYYY hh:mm:ss')
+// );
+
+// milestone 4 ricerca: visible true,  quando stampate la lista dei contatti fate un controllo su qeusta variabile, quando effettui una ricerca alla pressione di un qualsiasi tasto su un campo input fate un ciclo su tutti i contatti e se la stringa è presente nel campo input rimane visible true altrimenti diventa visible false. come fate a verificare se all'interno di una stringa è oresente un'ltra stringa? si usa includes() perchè le stringhe sono come Array.

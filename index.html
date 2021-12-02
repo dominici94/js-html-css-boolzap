@@ -90,7 +90,7 @@
                         <div class="text-contact">
                             <h6>{{contacts[activeItem].name}}</h6>
                             <!-- //come si accede all'ultimo oggetto dell'array dentro un oggetto??? -->
-                            <span>Ultimo accesso oggi alle {{contacts[activeItem].messages[1].date}}</span>
+                            <span>Ultimo accesso oggi alle {{currentDate}}</span>
                         </div>
                     </div>
 
@@ -152,6 +152,9 @@
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <!-- /vue -->
+    <!-- dayjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- /dayjs -->
     <script src="js/script.js"></script>
 </body>
 </html>
