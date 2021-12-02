@@ -13,9 +13,6 @@
 // contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo 
 // “mar” rimangono solo Marco e Martina) 
 
-// Consigli utili: 
- 
-// ●   Per gestire le date, può essere utile la libreria  day.js 
 
 
 
@@ -127,19 +124,7 @@ const app = new Vue({
                     status: 'sent',
                 });
                 this.inputUser = '';
-                // setTimeout( function(){
-                //     this.contacts[this.activeItem].messages.push({
-                //         date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
-                //         message: 'ok',
-                //         status: 'received',
-                //     });
-                // } , 1000);
-                this.contacts[this.activeItem].messages.push({
-                    date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
-                    message: 'ok',
-                    status: 'received',
-                });
-                
+                setTimeout(this.answer, 1000);
                 
             }
         }, 
