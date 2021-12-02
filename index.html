@@ -47,32 +47,17 @@
 
                 <div class="search-container">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                    <input type="text" placeholder="cerca o inizia una nuova chat" v-model="searchContact" @keyup=findContact>
                 </div>
 
                 <!-- lista dei contatti -->
-                <!-- da rendere poi dinamica -->
                 <div class="list-container">
-                    <div class="contact"  v-for="(contact, index) in contacts" :class="activeItem == index? 'active' : ''" @click="showContact(index)">
+                    <div class="contact"  v-for="(contact, index) in contacts" :class="activeItem == index? 'active' : ''" @click="showContact(index)" v-if="contact.visible">
+                        
                         <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                         <span>{{contact.name}}</span>
+
                     </div>
-
-                    <!-- <div class="contact">
-                        <img src="img/avatar_2.jpg" alt="Fabio">
-                        <span>Fabio</span>
-                    </div>
-
-                    <div class="contact">
-                        <img src="img/avatar_3.jpg" alt="Samuele">
-                        <span>Samuele</span>
-                    </div>
-
-                    <div class="contact">
-                        <img src="img/avatar_4.jpg" alt="Luisa">
-                        <span>Luisa</span>
-                    </div> -->
-
                 </div>
                 <!-- /lista contatti -->
 

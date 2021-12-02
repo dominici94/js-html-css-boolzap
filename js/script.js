@@ -6,12 +6,18 @@
 // ●   Visualizzazione dinamica della lista contatti:  tramite  la direttiva v-for, visualizzare 
 // nome e immagine di ogni contatto 
  
+// Milestone 2 
+// ●   Visualizzazione dinamica dei messaggi:  tramite la  direttiva v-for, visualizzare tutti i 
+// messaggi relativi al contatto attivo all’interno del pannello della conversazione 
+// ●   Click sul contatto  mostra la conversazione del contatto  cliccato
+// Milestone 3 
+// ●   Aggiunta di un messaggio  : l’utente scrive un testo  nella parte bassa e digitando 
+// “enter” il testo viene aggiunto al thread sopra, come messaggio verde 
+// ●   Risposta dall’interlocutore:  ad ogni inserimento di  un messaggio, l’utente riceverà 
+// un “ok” come risposta, che apparirà dopo 1 secondo.
 
  
-// Milestone 4 
-// ●   Ricerca utenti:  scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i 
-// contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo 
-// “mar” rimangono solo Marco e Martina) 
+
 
 
 
@@ -104,6 +110,7 @@ const app = new Vue({
         activeItem : 0,
         inputUser : '',
         currentDate: dayjs().format('DD/MM/YYYY hh:mm:ss'),
+        searchContact : '',
     },
     methods: {
         showContact: function(index){
@@ -127,22 +134,30 @@ const app = new Vue({
                 setTimeout(this.answer, 1000);
                 
             }
-        }, 
+        },
+        findContact: function(){
+            for(let i=0; i< this.contacts.length; i++){
+                if(this.contacts[i].name.includes(this.searchContact)){
+                    this.contacts[i].visible = true;
+                }else{
+                    this.contacts[i].visible = false;
+                }
+            }
+            
+        },
+        // creaRicerca: function{
+        //     const array = '';
+        //     array.push()
+        // }
               
 
     }
 }); 
 
-
-// Milestone 2 
-// ●   Visualizzazione dinamica dei messaggi:  tramite la  direttiva v-for, visualizzare tutti i 
-// messaggi relativi al contatto attivo all’interno del pannello della conversazione 
-// ●   Click sul contatto  mostra la conversazione del contatto  cliccato
-// Milestone 3 
-// ●   Aggiunta di un messaggio  : l’utente scrive un testo  nella parte bassa e digitando 
-// “enter” il testo viene aggiunto al thread sopra, come messaggio verde 
-// ●   Risposta dall’interlocutore:  ad ogni inserimento di  un messaggio, l’utente riceverà 
-// un “ok” come risposta, che apparirà dopo 1 secondo.
+// Milestone 4 
+// ●   Ricerca utenti:  scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i 
+// contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo 
+// “mar” rimangono solo Marco e Martina) 
 
 
 // stackoverflow per date
