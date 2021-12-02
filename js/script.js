@@ -137,7 +137,7 @@ const app = new Vue({
         },
         findContact: function(){
             for(let i=0; i< this.contacts.length; i++){
-                if(this.contacts[i].name.includes(this.searchContact)){
+                if(this.contacts[i].name.toLowerCase().includes(this.searchContact.toLowerCase())){
                     this.contacts[i].visible = true;
                 }else{
                     this.contacts[i].visible = false;
@@ -145,10 +145,6 @@ const app = new Vue({
             }
             
         },
-        // creaRicerca: function{
-        //     const array = '';
-        //     array.push()
-        // }
               
 
     }
