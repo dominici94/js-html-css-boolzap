@@ -15,7 +15,7 @@
     <!-- /googlefont -->
     <title>Boolzapp</title>
 </head>
-<body class="debug">
+<body>
     <!-- main -->
     <main>
 
@@ -91,32 +91,13 @@
                     <div class="row" v-for="message in contacts[activeItem].messages">
                         <div class="chat" :class="message.status == 'received' ? 'user' : 'friend'">
                             <div class="text">
-                                <!-- Hai portato a spasso il cane? -->
-                                {{message.message}}
+                                <span>{{message.message}}</span>
                             </div>
                             <div class="date-text">
-                                <!-- 10/01/2020 15:30:55 -->
-                                {{message.date}}
+                                <span>{{message.date}}</span>
                             </div>
                         </div>
-                    </div>
-                    <!-- <div class="row">
-                        <div class="chat friend">
-                            <div class="text">
-                                Ricordati di dargli da mangiare
-                            </div>
-                            <div class="date-text">
-                                10/01/2020 15:50:00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="chat user">
-                            <div class="text">Tutto fatto!</div>
-                            <div class="date-text">10/01/2020 16:15:22</div>
-                        </div>
-                    </div> -->
-                    
+                    </div>    
                 </div>
 
                 <div class="write-container">

@@ -10,6 +10,9 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
+span{
+    font-weight: bold;
+}
 
 /* main */
 main{
@@ -239,44 +242,3 @@ input:focus{
     border: none;
     border-radius: 5px;
 }
-
-/* debug */
-
-/* .debug .container{
-    background-color: lightgray;
-} */
-
-/* .debug .left-container{
-    background-color: lightsalmon;
-} */
-
-/* .debug .right-container{
-    background-color: lightpink;
-} */
-/* .debug .user-container{
-    background-color: lightcoral;
-} */
-
-/* .debug .notice-container{
-    background-color: lightgoldenrodyellow;
-} */
-
-/* .debug .search-container{
-    background-color: lightcyan;
-} */
-
-/* .debug .list-container{
-    background-color: tomato;
-} */
-
-/* .debug .contact-container{
-    background-color: lightskyblue;
-} */
-
-/* .debug .chat-container{
-    background-color: lightsteelblue;
-} */
-
-/* .debug .write-container{
-    background-color: lightgreen;
-} */
